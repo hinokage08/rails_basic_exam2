@@ -22,6 +22,7 @@ class WebsitesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(website_id: @website.id)
   end
 
   def edit

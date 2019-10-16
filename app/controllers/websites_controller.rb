@@ -14,7 +14,8 @@ class WebsitesController < ApplicationController
       render :new
     else
       if @website.save
-        redirect_to new_website_path, notice: "投稿完了しました"
+        WebsiteMailer.website_mail(@website).deliver
+        redirect_to new_website_path, notice: "投稿完了しました。投稿確認メールを送信しました"
       else
         render :new
       end

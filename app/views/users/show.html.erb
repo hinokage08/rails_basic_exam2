@@ -3,4 +3,4 @@
 <p>メールアドレス: <%= @user.email %></p>
 <%= image_tag(@user.icon.url) if @user.icon && @user.icon.url %>
 
-<%= link_to "プロフィール編集", edit_user_path(current_user.id) %>
+<p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>

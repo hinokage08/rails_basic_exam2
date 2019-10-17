@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :favorite]
-  before_action :correct_user, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:show, :edit, :update, :favorite]
   def new
     @user = User.new
   end
@@ -50,6 +50,6 @@ class UsersController < ApplicationController
 
   def correct_user
     set_user
-    redirect_to user_path(current_user) unless current_user?(@user)
+    redirect_to websites_path unless current_user?(@user)
   end
 end

@@ -18,9 +18,10 @@
   <div class="user_image">
     <%= image_tag(website.image.url) if website.image && website.image.url %>
   </div>
-  <% if current_user?(website.user) %>
   <div class="user_option">
     <%= link_to '詳細', website_path(website.id) %>
+    <% if current_user?(website.user) %>
+
     <%= link_to '編集', edit_website_path(website.id) %>
     <%= link_to '削除', website_path(website.id), method: :delete,data: { confirm: '本当に削除していいですか'} %>
   </div>

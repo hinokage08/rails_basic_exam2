@@ -1,0 +1,6 @@
+<h2>お気に入り一覧</h2>
+
+<% @user.favorites.each do |favorite| %>
+<%= favorite.website.content %>
+<%= image_tag(favorite.website.image.url) if favorite.website.image && favorite.website.image.url %>
+<% end %>

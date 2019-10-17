@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :favorite]
   before_action :correct_user, only: [:show, :edit, :update]
   def new
     @user = User.new
@@ -26,6 +26,15 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def confirm
+    @user = User.new(user_params)
+    render :new if @user.invalid?
+  end
+
+
+  def favorite
   end
 
 

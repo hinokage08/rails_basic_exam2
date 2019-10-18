@@ -1,7 +1,8 @@
 class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
+  before_action :correct_website, only:[:show, :edit, :update, :destroy]
   def index
-    @websites = Website.all
+    @websites = Website.all.order(id: "DESC")
   end
 
   def new
@@ -55,6 +56,11 @@ class WebsitesController < ApplicationController
 
   def set_website
     @website = Website.find(params[:id])
+  end
+
+  def correct_website
+    set_website
+    redirect_to websites_path unless current_user_website?(@website)
   end
 
 end

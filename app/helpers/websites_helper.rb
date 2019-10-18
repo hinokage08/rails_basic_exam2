@@ -7,3 +7,7 @@ module WebsitesHelper
     end
   end
 end
+
+def current_user_website?(website)
+  website.user == current_user
+end

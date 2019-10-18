@@ -13,11 +13,11 @@
     <% if current_user?(website.user) %>
     <%= link_to image_tag('edit.png', class: 'edit_image'), edit_website_path(website.id) %>
     <%= link_to image_tag('trash.png', class: 'trash_image'), website_path(website.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
+    <% end %>
   </div>
   <div class="user_content">
     <%= website.content %>
   </div>
-    <% end %>
   </div>
     <% end %>
 <% else %>

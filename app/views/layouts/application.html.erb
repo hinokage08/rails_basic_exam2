@@ -13,8 +13,8 @@
     <div class="container-fluid > row">
     <header>
     <div class="top_menu clearfix">
-    <%= link_to image_tag('home_icon.png', class: 'home_icon'), websites_path %>
-    <%= image_tag('website_logo', class: 'website_logo') %>
+    <%#= link_to image_tag('home_icon.png', class: 'home_icon'), websites_path %>
+    <%#= image_tag('website_logo', class: 'website_logo') %>
     <% if logged_in? %>
     <%= link_to @current_user.name, user_path(current_user.id) %>
     <%= link_to "Logout", session_path(current_user.id), method: :delete %>

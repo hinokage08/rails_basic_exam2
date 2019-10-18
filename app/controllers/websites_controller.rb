@@ -1,6 +1,6 @@
 class WebsitesController < ApplicationController
   before_action :set_website, only: [:show, :edit, :update, :destroy]
-  before_action :correct_website, only:[:show, :edit, :update, :destroy]
+  before_action :correct_website, only:[:edit, :update, :destroy]
   def index
     @websites = Website.all.order(id: "DESC")
   end

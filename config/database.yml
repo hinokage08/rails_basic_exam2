@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: rails_exam3_production
-  username: rails_exam3
+  username: rails_exam3 
   password: <%= ENV['RAILS_EXAM3_DATABASE_PASSWORD'] %>
